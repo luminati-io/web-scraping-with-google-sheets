@@ -2,7 +2,7 @@
 
 [![Bright Data Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/)
 
-Learn how to leverage Google Sheets' IMPORTXML and IMPORTHTML functions to extract valuable data from websites without coding experience.
+Learn how to leverage Google Sheets' [IMPORTXML](https://support.google.com/docs/answer/3093342?hl=en) and [IMPORTHTML](https://support.google.com/docs/answer/3093339?hl=en) functions to extract valuable data from websites without coding experience.
 
 - [Benefits of Google Sheets for Web Scraping](#benefits-of-google-sheets-for-web-scraping)
 - [Creating Your First Scraping Sheet](#creating-your-first-scraping-sheet)
@@ -30,7 +30,7 @@ The data you collect can be easily exported to CSV or other formats for integrat
 
 To begin, navigate to [https://sheets.google.com](https://sheets.google.com/) and start a new spreadsheet by selecting the **+** icon:
 
-![Google Sheets new document creation](https://brightdata.com/wp-content/uploads/2024/10/image-24-1024x241.png)
+![Google Sheets new document creation](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-24-1024x241.png)
 
 Let's use the [**Books to Scrape**](https://books.toscrape.com/catalogue/category/books/default_15/index.html) demo site, which is designed specifically for learning web scraping techniques.
 
@@ -54,7 +54,7 @@ This function retrieves data from any web URL by using [XPath](https://developer
 
 The first time you use this function, Google Sheets will prompt for permission to connect to external sites:
 
-![Google Sheets access permission dialog](https://brightdata.com/wp-content/uploads/2024/10/image-25-1024x272.png)
+![Google Sheets access permission dialog](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-25-1024x272.png)
 
 After clicking **Allow access**, the cell will display "Default" - the H1 heading content from the target page.
 
@@ -74,7 +74,7 @@ This function extracts data based on the `query` parameter (either "table" or "l
 
 This formula will populate your spreadsheet with the complete book list:
 
-![Imported book list in Google Sheets](https://brightdata.com/wp-content/uploads/2024/10/image-26-1024x557.png)
+![Imported book list in Google Sheets](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-26-1024x557.png)
 
 ## Step-by-Step Data Extraction Guide
 
@@ -82,7 +82,7 @@ Now that you understand the basics, let's create a more structured extraction pr
 
 First, set up your spreadsheet with appropriate column headers:
 
-![Google Sheets with column headers](https://brightdata.com/wp-content/uploads/2024/10/image-27-1024x425.png)
+![Google Sheets with column headers](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-27-1024x425.png)
 
 To locate the correct XPath for book titles, use your browser's developer tools:
 
@@ -91,7 +91,7 @@ To locate the correct XPath for book titles, use your browser's developer tools:
 3. Right-click on the highlighted HTML element
 4. Choose **Copy > XPath**
 
-![Finding XPath using browser developer tools](https://brightdata.com/wp-content/uploads/2024/10/image-28-1024x498.png)
+![Finding XPath using browser developer tools](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-28-1024x498.png)
 
 The raw XPath for a single book title might look like this:
 
@@ -113,7 +113,7 @@ Enter this optimized formula in cell A2:
 
 Your sheet will populate with all book titles:
 
-![Google Sheets showing imported book titles](https://brightdata.com/wp-content/uploads/2024/10/image-29-1024x557.png)
+![Google Sheets showing imported book titles](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-29-1024x557.png)
 
 Next, add the pricing data formula to cell B2:
 
@@ -129,7 +129,7 @@ Finally, capture the ratings in cell C2:
 
 The completed spreadsheet will display all three data points:
 
-![Complete spreadsheet with book data](https://brightdata.com/wp-content/uploads/2024/10/image-30-1024x557.png)
+![Complete spreadsheet with book data](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-30-1024x557.png)
 
 Note that the ratings appear as `star-rating Three` or `star-rating Four`. Unfortunately, since Google Sheets doesn't support [XPath 2.0](https://www.w3.org/TR/xpath20/), you can't transform this data directly in the formula.
 
@@ -155,11 +155,11 @@ To configure update frequency in Google Sheets:
 2. Navigate to the **Calculation** tab
 3. Set your preferred recalculation interval
 
-![Google Sheets settings menu](https://brightdata.com/wp-content/uploads/2024/10/image-31-1024x558.png)
+![Google Sheets settings menu](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-31-1024x558.png)
 
 You can choose between one-minute or one-hour refresh intervals:
 
-![Google Sheets recalculation settings](https://brightdata.com/wp-content/uploads/2024/10/image-32-1024x619.png)
+![Google Sheets recalculation settings](https://github.com/luminati-io/web-scraping-with-google-sheets/blob/main/images/image-32-1024x619.png)
 
 While Google Sheets limits you to these two refresh options, dedicated scraping solutions like Bright Data provide more flexible scheduling and deliver data in multiple formats (JSON, CSV, Parquet), making them ideal for enterprise-scale data collection.
 
@@ -171,14 +171,14 @@ To improve scraping efficiency and reduce potential issues:
 
 **Implement Delays**: For larger projects, add pauses between requests and schedule during off-hours to prevent triggering rate limits or IP blocks.
 
-**Handle Anti-Scraping Measures**: Many sites use CAPTCHA challenges to detect automated access. For sensitive scraping tasks, consider using residential proxies with IP rotation.
+**Handle Anti-Scraping Measures**: Many sites use CAPTCHA challenges to detect automated access. For sensitive scraping tasks, consider using [proxies with automatic IP rotation](https://brightdata.com/solutions/rotating-proxies).
 
-**Review Legal Requirements**: Always check the website's terms of service and `robots.txt` file before scraping.
+**Review Legal Requirements**: Always check the website's terms of service and [`robots.txt`](https://brightdata.com/blog/how-tos/robots-txt-for-web-scraping-guide) file before scraping.
 
 ## Next Steps
 
 Google Sheets provides an excellent entry point for web scraping, especially for static websites with structured data.
 
-For more complex requirements involving dynamic content, large volumes, or sophisticated anti-scraping measures, [Bright Data's Web Scraper API](https://brightdata.com/products/web-scraper) offers a scalable solution with built-in handling for proxies, CAPTCHAs, and various output formats.
+For more complex requirements involving dynamic content, large volumes, or sophisticated [anti-scraping measures](https://brightdata.com/blog/web-data/anti-scraping-techniques), [Bright Data's Web Scraper API](https://brightdata.com/products/web-scraper) offers a scalable solution with built-in handling for proxies, CAPTCHAs, and various output formats.
 
 Sign up for a free trial today and start optimizing your data workflows!
